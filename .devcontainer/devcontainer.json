@@ -1,0 +1,66 @@
+{
+  "name": "Java",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "installGradle": true,
+      "installMaven": true,
+      "version": "21.0.7",
+      "jdkDistro": "tem",
+      "gradleVersion": "latest",
+      "mavenVersion": "latest"
+    },
+
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": true,
+      "installOhMyZsh": true,
+      "installOhMyZshConfig": true,
+      "upgradePackages": true,
+      "username": "automatic",
+      "userUid": "automatic",
+      "userGid": "automatic"
+    }
+  },
+
+  "containerEnv": {
+    "LC_ALL": "de_DE.UTF-8",
+    "LANG": "de_DE.UTF-8",
+    "LANGUAGE": "de_DE.UTF-8",
+    "TZ": "Europe/Berlin"
+  },
+
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "java.configuration.updateBuildConfiguration": "automatic",
+        //Prettier Configuration
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[java]": {
+          "editor.formatOnPaste": true,
+          "editor.formatOnSave": true,
+          "editor.defaultFormatter": "RudraPatel.prettier-plugin-java-vscode"
+        }
+      },
+      "extensions": [
+        "redhat.java",
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-maven",
+        "dhruv.maven-dependency-explorer",
+        "esbenp.prettier-vscode",
+        "RudraPatel.prettier-plugin-java-vscode",
+        "vscjava.vscode-spring-initializr",
+        "vmware.vscode-spring-boot",
+        "vscjava.vscode-spring-boot-dashboard"
+      ]
+    }
+  },
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+  "runArgs": ["--privileged"]
+}
